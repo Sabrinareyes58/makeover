@@ -1,3 +1,7 @@
+/*---------------------------
+Editado en Abril 2021
+---------------------------*/
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -12,6 +16,18 @@ body {
 	font-family: 'Alata';
 	font-size: 1.2rem;
 	min-height: 100%;
+	background-color: #999999;
+}
+
+.grid-container {
+	display: grid;
+	grid-gap: 10px;
+	grid-template: 
+		"H" auto
+		"N" auto
+		"S" 10rem
+		"A" auto
+		"F" auto;
 }
 
 .grid-container > * {
@@ -21,70 +37,52 @@ body {
 	text-align: center;
 }
 
-.grid-container {
-	display: grid;
-	grid-gap: 10px;
-	grid-template-areas: 
-		"header" 100px
-		"navbar" 50px
-		"main" auto
-		"sidebar" 100px
-		"footer" 100px;
-}
-
-
 header {
-	grid-area: header;
+	grid-area:H;
 	background-color: darkcyan;
 }
 
 nav {
-	grid-area: navbar;
+	grid-area:N;
 	background-color: mediumpurple;
 }
 
-aside {
-	grid-area: sidebar;
-	background-color: olivedrab;
-}
-
-main {
-	grid-area: main;
+section {
+	grid-area:S;
 	background-color: steelblue;
 }
 
+aside {
+	grid-area:A;
+	background-color: olivedrab;
+}
+
 footer {
-	grid-area: footer;
+	grid-area:F;
 	background-color: orange;
 }
 
-
-@media (min-width: 600px) {
+@media (min-width: 640px) {
 	.grid-container {
-		/*grid-template-columns: 200px auto;
-		grid-template-rows: 100px 50px auto 100px;
-		grid-template-areas: 
-		"header header"
-		"navbar navbar"
-		"sidebar main"
-		"footer footer"*/
-
 		grid-template:
-		"header header" 100px
-		"navbar navbar" 50px
-		"sidebar main" auto
-		"footer footer" 100px /
-		200px auto; 
+		"H  H" 4rem
+		"N  N" 2rem
+		"S  A" auto
+		"F  F" 3rem /
+		65% 35% ;
 	}
 }
 
-@media (min-width: 900px) {
-	.grid-container {
-
+@media (min-width: 768px) {
+	.grid-container {	
 		grid-template:
-		"header header header" 100px
-		"navbar main   sidebar"  auto
-		"footer footer footer" 100px /
-		200px   auto   200px; 
+		"H  H  H" 4rem
+		"N  S  A" auto
+		"F  F  F" 3rem /
+		15% 55% 30%;
 	}
 }
+
+/*-------------------------
+Editado en Abril 2021
+-------------------------*/
